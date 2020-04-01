@@ -8,13 +8,31 @@ $(document).ready(function(){
   // dropdown nascosti
   $('.dropdown').hide();
 
-  // quando faccio click sul link spunta il dropdown menù
+  // con hover spunta il dropdown menù
 
-  $('li a').click(function(){
-      $(this).siblings('ul').toggle(1000);
-    }
-  );
+  $('li a').mouseenter(function(){
+      $(this).siblings('.dropdown').show();
+  });
 
-  // quando clicco altrove il dropdown menù si chiude
+  // tolgo il mouse, scompare il menu
+
+  $('li a').mouseleave(function(){
+      $(this).siblings('.dropdown').hide();
+  });
+
+
+  // hamburgermenu
+  // se clicco sull'icona è visibile
+  $('.fa-bars').click(
+    function(){
+      $('.hamburgermenu').fadeIn();
+  });
+
+
+  // se clicco nuovamente quando è visibile, scompare
+  $('.fa-times').click(
+    function(){
+      $('.hamburgermenu').fadeOut();
+  });
 
 });
